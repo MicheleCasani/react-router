@@ -1,5 +1,4 @@
 import React from 'react'
-import ManiNavbar from '../components/ManiNavbar'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -24,7 +23,6 @@ function Products() {
     return (
         <>
             <div className="container">
-                <ManiNavbar />
                 <div className="row">
                     <div className="col-12 justify-content-center text-center my-5">
                         <h1>Prodotti</h1>
