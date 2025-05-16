@@ -22,7 +22,7 @@ function ManiNavbar() {
     return (
         <header>
             <nav>
-                <ul className='list-unstyled d-flex justify-content-center my-5'>
+                <ul className='list-unstyled d-flex justify-content-center align-items-center my-5'>
                     {links.map((link, index) => {
                         return (
                             <li key={index}

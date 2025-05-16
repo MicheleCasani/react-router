@@ -9,9 +9,46 @@
   border-bottom: 1px solid black;
   font-weight: 500;
   transition: 0.1s;
+
 }
 
 a.active {
   font-weight: 500;
   border-bottom: 1px solid black;
+}
+
+img {
+  object-fit: contain;
+  height: 200px;
+}
+
+
+
+.card-text-truncate {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.container {
+  background-color: beige;
+  border-radius: 10px;
+}
+
+header {
+  border-bottom: 1px solid black;
+  height: 100px;
+}
+
+nav {
+  margin-top: 10px;
 }

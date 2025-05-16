@@ -38,17 +38,17 @@ function Products() {
                         </div>
                     ) : (
                         products.map((product, index) => (
-                            <div className="col-12 col-md-6 col-lg-3 d-flex" key={index}>
-                                <Link to={`/products/${product.id}`} className=''>
-                                    <div className="card flex-fill my-3">
-                                        <div className="card-img-top">
-                                            <img src={product.image} className="img-fluid" alt={product.title} />
-                                        </div>
+                            <div className="col-12 col-md-6 col-lg-3 my-3" key={index}>
+                                <Link to={`/products/${product.id}`} className='text-decoration-none'>
+                                    < div className="card h-100 p-3 ">
+                                        <img src={product.image} className="card-img-top" alt="..." />
                                         <div className="card-body">
-                                            <h3>{product.title}</h3>
-                                            <p>{product.price} €</p>
-                                            <p>{product.description}</p>
+                                            <h5 className="card-title">{product.title}</h5>
+                                            <p className="card-text card-text-truncate">{product.description}</p>
                                         </div>
+                                        <ul className="list-group list-group-flush">
+                                            <li className="list-group-item">{product.price} €</li>
+                                        </ul>
                                     </div>
                                 </Link>
                             </div>
@@ -63,3 +63,5 @@ function Products() {
 }
 
 export default Products
+
+
