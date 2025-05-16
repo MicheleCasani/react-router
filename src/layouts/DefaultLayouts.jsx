@@ -10,12 +10,7 @@ function DefaultLayouts() {
                     <ManiNavbar />
                 </header>
                 <main>
-
-                    <div className="row">
-                        <div className="col-12">
-                            <Outlet />
-                        </div>
-                    </div>
+                    <Outlet />
                 </main>
             </div >
         </>
