@@ -6,7 +6,7 @@ import axios from 'axios';
 
 function Products() {
 
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(null);
 
     const getProducts = () => {
         axios
@@ -29,25 +29,29 @@ function Products() {
                         <h1>Prodotti</h1>
                     </div>
                 </div>
+
                 <div className="row">
-                    {products.map((product) => {
-                        return (
-                            <div className="col-12 col-md-6 col-lg-4 d-flex">
+                    {products === null ? (
+                        <div className="col-12 justify-content-center text-center">
+                            <p>Loading...</p>
+                        </div>) : (products.map((product, index) => (
+                            <div className="col-12 col-md-6 col-lg-3 d-flex" key={index}>
                                 <div className="card flex-fill my-3">
-                                    <div className="card-image-top">
-                                        <img src={product.image} className="img-fluid" alt="" />
+                                    <div className="card-img-top">
+                                        <img src={product.image} className="img-fluid" alt={product.title} />
                                     </div>
                                     <div className="card-body">
                                         <h3>{product.title}</h3>
-                                        <p>{product.price}</p>
+                                        <p>{product.price} €</p>
                                         <p>{product.description}</p>
                                     </div>
                                 </div>
                             </div>
-                        );
-                    })}
+                        ))
+                    )}
                 </div>
             </div>
+
         </>
     )
 }
