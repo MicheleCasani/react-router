@@ -2,6 +2,7 @@ import React from 'react'
 import ManiNavbar from '../components/ManiNavbar'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 function Products() {
@@ -34,21 +35,26 @@ function Products() {
                     {products === null ? (
                         <div className="col-12 justify-content-center text-center">
                             <p>Loading...</p>
-                        </div>) : (products.map((product, index) => (
+                        </div>
+                    ) : (
+                        products.map((product, index) => (
                             <div className="col-12 col-md-6 col-lg-3 d-flex" key={index}>
-                                <div className="card flex-fill my-3">
-                                    <div className="card-img-top">
-                                        <img src={product.image} className="img-fluid" alt={product.title} />
+                                <Link to={`/products/${product.id}`} className=''>
+                                    <div className="card flex-fill my-3">
+                                        <div className="card-img-top">
+                                            <img src={product.image} className="img-fluid" alt={product.title} />
+                                        </div>
+                                        <div className="card-body">
+                                            <h3>{product.title}</h3>
+                                            <p>{product.price} €</p>
+                                            <p>{product.description}</p>
+                                        </div>
                                     </div>
-                                    <div className="card-body">
-                                        <h3>{product.title}</h3>
-                                        <p>{product.price} €</p>
-                                        <p>{product.description}</p>
-                                    </div>
-                                </div>
+                                </Link>
                             </div>
                         ))
                     )}
+
                 </div>
             </div>
 
